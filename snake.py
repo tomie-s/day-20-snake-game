@@ -25,6 +25,13 @@ class Snake:
         new_box.goto(position)
         self.snake_body.append(new_box)
 
+    def restart(self):
+        for box in self.snake_body:
+            box.goto(1000, 1000)
+        self.snake_body.clear()
+        self.create_snake()
+        self.head = self.snake_body[0]
+
     def extend_body(self):
         self.add_box(self.snake_body[-1].position())
 
